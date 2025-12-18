@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Finance Organizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-icon">💎</span> Smart Finance
+        </div>
+
+        <a href="dashboard.html"><span>🏠</span> Dashboard</a>
+        <a href="expenses.html" class="active"><span>📄</span> All Expenses</a>
+        <a href="analytics.html"><span>📊</span> Analytics</a>
+        <a href="budget.html"><span>💰</span> Budget Limits</a>
+        <a href="settings.html"><span>⚙</span> Settings</a>
+
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <!-- DO NOT TOUCH: sidebar toggle -->
+        <button id="toggleSidebarBtn" class="sidebar-toggle-btn">☰</button>
+
+        <!-- Minimal navbar (no duplicate navigation) -->
+        <div class="navbar-menu">
+            <a href="dashboard.html" class="active">Home</a>
+        </div>
+
+        <!-- User Avatar -->
+        <div class="profile-box">
+            <a href="user.html" class="profile-avatar profile-link" title="User Profile">
+                👤
+            </a>
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <h2 class="page-title">All Expenses</h2>
+
+
+        <!-- Add Expense Card -->
+        <div class="card">
+            <h3>Add New Expense</h3>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="title" placeholder="Enter title">
+                </div>
+
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount">
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="category">
+                        <option>Select Category</option>
+                        <option>Food</option>
+                        <option>Travel</option>
+                        <option>Shopping</option>
+                        <option>Utilities</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="date">
+                </div>
+            </div>
+
+            <button class="btn-primary" id="addExpenseBtn">+ Add Expense</button>
+        </div>
+
+
+        <!-- ⭐ FILTER BAR ⭐ -->
+        <div class="card">
+            <h3>Filter Transactions</h3>
+
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+
+                <div>
+                    <label>Category</label>
+                    <select id="filterCategory">
+                        <option value="">All</option>
+                        <option>Food</option>
+                        <option>Travel</option>
+                        <option>Shopping</option>
+                        <option>Utilities</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Date From</label>
+                    <input type="date" id="filterFrom">
+                </div>
+
+                <div>
+                    <label>Date To</label>
+                    <input type="date" id="filterTo">
+                </div>
+
+                <button class="btn-primary" id="applyFiltersBtn" style="width: 160px;">Apply Filters</button>
+                <button class="btn-primary" id="clearFiltersBtn"
+                    style="width: 160px; background:#6b7280;">Clear</button>
+
+            </div>
+        </div>
+
+
+        <!-- TABLE CARD -->
+        <div class="card">
+            <h3>All Transactions</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="expenseTableBody">
+                        <!-- Data from JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script src="expenses.js"></script>
+
+</body>
+
+</html>

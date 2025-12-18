@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Finance Organizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-icon">💎</span> Smart Finance
+        </div>
+
+        <a href="dashboard.html"><span>🏠</span> Dashboard</a>
+        <a href="expenses.html"><span>📄</span> All Expenses</a>
+        <a href="analytics.html" class="active"><span>📊</span> Analytics</a>
+        <a href="budget.html"><span>💰</span> Budget Limits</a>
+        <a href="settings.html"><span>⚙</span> Settings</a>
+
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <!-- DO NOT TOUCH: sidebar toggle -->
+        <button id="toggleSidebarBtn" class="sidebar-toggle-btn">☰</button>
+
+        <!-- Minimal navbar (no duplicate navigation) -->
+        <div class="navbar-menu">
+            <a href="dashboard.html" class="active">Home</a>
+        </div>
+
+        <!-- User Avatar -->
+        <div class="profile-box">
+            <a href="user.html" class="profile-avatar profile-link" title="User Profile">
+                👤
+            </a>
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <h2 class="page-title">Analytics</h2>
+
+        <!-- ⭐ CHARTS SECTION -->
+        <div class="card">
+            <h3>Spending Overview (Charts)</h3>
+
+            <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+
+                <div style="width: 320px;">
+                    <h4>Category Distribution</h4>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+
+                <div style="width: 420px;">
+                    <h4>Monthly Expense Trend</h4>
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="analytics.js"></script>
+
+</body>
+
+</html>

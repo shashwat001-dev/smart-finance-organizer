@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Finance Organizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <span class="logo-icon">💎</span> Smart Finance
+        </div>
+
+        <a href="dashboard.html"><span>🏠</span> Dashboard</a>
+        <a href="expenses.html"><span>📄</span> All Expenses</a>
+        <a href="analytics.html"><span>📊</span> Analytics</a>
+        <a href="budget.html"><span>💰</span> Budget Limits</a>
+        <a href="settings.html" class="active"><span>⚙</span> Settings</a>
+
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <!-- DO NOT TOUCH: sidebar toggle -->
+        <button id="toggleSidebarBtn" class="sidebar-toggle-btn">☰</button>
+
+        <!-- Minimal navbar (no duplicate navigation) -->
+        <div class="navbar-menu">
+            <a href="dashboard.html" class="active">Home</a>
+        </div>
+
+        <!-- User Avatar -->
+        <div class="profile-box">
+            <a href="user.html" class="profile-avatar profile-link" title="User Profile">
+                👤
+            </a>
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <h2 class="page-title">Settings</h2>
+
+        <div class="card">
+            <h3>Settings Page</h3>
+            <p>This page will contain user settings and preferences later.</p>
+
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
