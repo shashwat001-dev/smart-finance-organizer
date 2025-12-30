@@ -1,11 +1,11 @@
 const connectDB = require("./db");
 
 async function createTable() {
-    const db = await connectDB();
+   const db = await connectDB();
 
-    console.log("⏳ Creating budgets table...");
+   console.log("⏳ Creating budgets table...");
 
-    await db.exec(`
+   await db.exec(`
     CREATE TABLE IF NOT EXISTS budgets (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        user_id INTEGER UNIQUE NOT NULL,
@@ -15,7 +15,9 @@ async function createTable() {
     CREATE TABLE IF NOT EXISTS users (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        email TEXT UNIQUE NOT NULL,
-       password TEXT NOT NULL
+       password TEXT NOT NULL,
+       reset_token TEXT,
+       reset_token_expiry INTEGER
     );
 
     CREATE TABLE IF NOT EXISTS transactions (
@@ -29,9 +31,9 @@ async function createTable() {
 
   `);
 
-    console.log("✅ Transactions table created successfully!");
-    console.log("✅ Users table created");
-    console.log("✅ Budgets table created successfully");
+   console.log("✅ Transactions table created successfully!");
+   console.log("✅ Users table created");
+   console.log("✅ Budgets table created successfully");
 }
 
 createTable();
