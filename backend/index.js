@@ -3,7 +3,7 @@ const financeRoutes = require('./routes/financeRoutes');
 const express = require('express'); // import Express
 const cors = require('cors');
 const app = express();              // create Express app
-const PORT = 3000;                  // server port
+const PORT = process.env.PORT || 3000; // server port
 
 // Enable CORS
 app.use(cors());
