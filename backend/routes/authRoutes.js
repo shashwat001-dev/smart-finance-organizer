@@ -6,7 +6,7 @@ const transporter = require("../utils/mailer");
 const connectDB = require("../db");
 
 const router = express.Router();
-const SECRET = "jwt_secret_key"; // later move to .env
+const SECRET = process.env.JWT_SECRET; // later move to .env
 
 // REGISTER
 router.post("/register", async (req, res) => {
@@ -69,8 +69,8 @@ router.post("/forgot-password", async (req, res) => {
         [resetToken, expiry, email]
     );
 
-    const resetLink =
-        `http://127.0.0.1:5500/reset-password.html?token=${resetToken}`;
+    const resetLink = `${process.env.FRONTEND_URL}/reset-password.html?token=${resetToken}`;
+
 
     try {
         await transporter.sendMail({
