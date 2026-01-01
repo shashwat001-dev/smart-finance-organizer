@@ -1,3 +1,4 @@
+require("dotenv").config();
 const financeRoutes = require('./routes/financeRoutes');
 const express = require('express'); // import Express
 const cors = require('cors');

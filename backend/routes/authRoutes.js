@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
+const transporter = require("../utils/mailer");
 const connectDB = require("../db");
 
 const router = express.Router();
@@ -68,10 +69,26 @@ router.post("/forgot-password", async (req, res) => {
         [resetToken, expiry, email]
     );
 
-    // For now: just log reset link
-    console.log(
-           `🔑 Password reset link: http://127.0.0.1:5500/reset-password.html?token=${resetToken}`  
-    );
+    const resetLink =
+        `http://127.0.0.1:5500/reset-password.html?token=${resetToken}`;
+
+    try {
+        await transporter.sendMail({
+            from: `"Smart Finance Organizer" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: "Reset your password",
+            html: `
+            <p>You requested a password reset.</p>
+            <p>This link is valid for 15 minutes.</p>
+            <a href="${resetLink}">Reset Password</a>
+        `
+        });
+
+        console.log("📧 Password reset email sent to:", email);
+
+    } catch (error) {
+        console.error("❌ Email sending failed:", error.message);
+    }
 
     res.json({ message: "Reset link generated" });
 });
