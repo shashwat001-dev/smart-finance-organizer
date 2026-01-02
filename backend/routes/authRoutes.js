@@ -91,7 +91,10 @@ router.post("/forgot-password", async (req, res) => {
         console.error("❌ Email sending failed:", error.message);
     }
 
-    res.json({ message: "Reset link generated" });
+    res.json({
+        message: "Reset token generated (DEV MODE)",
+        resetToken
+    });
 });
 
 // RESET PASSWORD
