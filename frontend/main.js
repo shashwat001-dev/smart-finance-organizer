@@ -1,3 +1,11 @@
+const API_BASE_URL =
+    window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1" ||
+        window.location.protocol === "file:"
+        ? "http://localhost:3000"
+        : "https://smart-finance-backend-2xvh.onrender.com";
+
+
 /* ============================================================
    AUTH GUARD (RUNS ON EVERY PAGE THAT LOADS main.js)
    ============================================================ */

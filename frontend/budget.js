@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentBudget = document.getElementById("currentBudget");
 
     if (!input || !saveBtn) return;
-    fetch("http://localhost:3000/api/budget", {
+    fetch(`${API_BASE_URL}/api/budget`, {
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("token")
         }
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        fetch("http://localhost:3000/api/budget", {
+        fetch(`${API_BASE_URL}/api/budget`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

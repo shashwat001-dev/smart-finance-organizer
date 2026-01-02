@@ -6,7 +6,7 @@ let filterFrom = "";
 let filterTo = "";
 let monthlyBudget = 0;
 
-fetch("http://localhost:3000/api/budget", {
+fetch(`${API_BASE_URL}/api/budget`, {
     headers: {
         "Authorization": "Bearer " + localStorage.getItem("token")
     }
@@ -21,7 +21,7 @@ fetch("http://localhost:3000/api/budget", {
    LOAD TRANSACTIONS + DASHBOARD TOTALS + CHARTS
    ============================================================ */
 function loadTransactions() {
-    fetch("http://localhost:3000/api/transactions", {
+    fetch(`${API_BASE_URL}/api/transactions`, {
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("token") // ✅ HERE
         }

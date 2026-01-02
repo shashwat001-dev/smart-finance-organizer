@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const payload = { title, amount, category, date };
 
-            fetch("http://localhost:3000/api/transactions", {
+            fetch(`${API_BASE_URL}/api/transactions`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function loadExpensesTable() {
     const fromFilter = document.getElementById("filterFrom").value;
     const toFilter = document.getElementById("filterTo").value;
 
-    fetch("http://localhost:3000/api/transactions", {
+    fetch(`${API_BASE_URL}/api/transactions`, {
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("token")
         }
@@ -87,7 +87,7 @@ function loadExpensesTable() {
    DELETE EXPENSE
    ============================================================ */
 function deleteExpense(id) {
-    fetch(`http://localhost:3000/api/transactions/${id}`, {
+    fetch(`${API_BASE_URL}/api/transactions/${id}`, {
         method: "DELETE",
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("token")

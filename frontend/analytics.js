@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     if (!document.getElementById("categoryChart")) return;
 
-    fetch("http://localhost:3000/api/transactions", {
+    fetch(`${API_BASE_URL}/api/transactions`, {
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("token") // ✅ HERE
         }
