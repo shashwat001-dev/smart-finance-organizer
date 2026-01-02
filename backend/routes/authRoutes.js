@@ -62,6 +62,7 @@ router.post("/forgot-password", async (req, res) => {
     }
 
     const resetToken = crypto.randomBytes(32).toString("hex");
+    console.log("RESET TOKEN (DEV):", resetToken);
     const expiry = Date.now() + 15 * 60 * 1000; // 15 mins
 
     await db.run(
