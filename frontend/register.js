@@ -1,3 +1,7 @@
+console.log("register.js loaded");
+
+const API_BASE_URL = "https://smart-finance-backend-2xvh.onrender.com";
+
 const form = document.getElementById("registerForm");
 
 form.addEventListener("submit", async (e) => {
