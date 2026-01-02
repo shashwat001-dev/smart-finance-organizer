@@ -92,7 +92,7 @@ router.post("/forgot-password", async (req, res) => {
     }
 
     res.json({
-        message: "Reset token generated (DEV MODE)",
+        message: "🚨 DEV MODE TOKEN RESPONSE ACTIVE 🚨",
         resetToken
     });
 });
