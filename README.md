@@ -156,7 +156,7 @@ npm start
 
 ### ⚠️ Known Limitations
 
-* Email reset may not work on deployed backend
+* Password reset through email may not work on deployed backend
 * SQLite data resets due to free-tier hosting
 * Backend may have cold start delay
 
